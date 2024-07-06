@@ -1,0 +1,14 @@
+<h1>Watchlist</h1>
+<p>Stay Entertained</p>
+<%= link_to "Create New List", new_list_path %>
+<div class="container col-3">
+  <% @lists.each do |list| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= list.name %></h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <%= link_to "View List", list_path(list) %>
+    </div>
+  </div>
+  <% end %>
+</div>
