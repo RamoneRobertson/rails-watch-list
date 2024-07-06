@@ -1,0 +1,12 @@
+<h1>Watchlist</h1>
+<p>Stay Entertained</p>
+
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list| %>
+    <div>
+      <%= list.name %>
+    </div>
+    <% end %>
+  </div>
+</div>
