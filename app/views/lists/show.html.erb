@@ -1,10 +1,11 @@
 <div class="container p-3">
   <h1><%= @list.name %></h1>
   <div class="row">
-    <% @movies.each do |movie| %>
+    <% @list.bookmarks.each do |bookmark| %>
       <div class="col-4 p-3 card">
-        <h5><%= movie.title %></h5>
-        <span><%= movie.rating %></span>
+        <h5><%= bookmark.movie.title %></h5>
+        <%= button_to 'Delete', bookmark_path(bookmark), method: :delete %>
+        <span><%= bookmark.movie.rating %></span>
       </div>
     <% end %>
   </div>

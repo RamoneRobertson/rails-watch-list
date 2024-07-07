@@ -43,19 +43,3 @@ bookmark_movies.each do |movie|
 end
 
 puts "Seeding complete!"
-
-
-
-# movies_data = URI.open(url).read
-# movies_hash = JSON.parse(movies_data)
-# movie_results = movies_hash["results"]
-
-
-# popular_movie_results.take(10).each do |movie|
-#   Movie.create!(
-#     title: movie["title"],
-#     overview: movie["overview"],
-#     poster_url: poster_base_url + movie["poster_path"],
-#     rating: movie["vote_average"]
-#   )
-# end
