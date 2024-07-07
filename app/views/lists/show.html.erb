@@ -1,1 +1,11 @@
-<h1><%= @list.name %></h1>
+
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <% @movies.each do |movie| %>
+  <div>
+    <h3><%= movie.title %></h3>
+    <p><%= movie.overview %></p>
+    <span><%= movie.rating %></span>
+  </div>
+  <% end %>
+</div>
