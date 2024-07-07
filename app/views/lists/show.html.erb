@@ -1,11 +1,12 @@
-
-<div class="container">
+<div class="container p-3">
   <h1><%= @list.name %></h1>
-  <% @movies.each do |movie| %>
-  <div>
-    <h3><%= movie.title %></h3>
-    <p><%= movie.overview %></p>
-    <span><%= movie.rating %></span>
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-4 p-3 card">
+        <h5><%= movie.title %></h5>
+        <span><%= movie.rating %></span>
+      </div>
+    <% end %>
   </div>
-  <% end %>
+  <%= link_to "+", new_list_bookmark_path(@list) %>
 </div>
