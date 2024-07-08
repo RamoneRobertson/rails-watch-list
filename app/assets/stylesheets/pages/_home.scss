@@ -1,1 +1,54 @@
-// Specific CSS for your home-page
+.grid {
+  background: hsl(36, 100%, 99%);
+  width: 100%;
+  max-width: 1500px;
+  height: 100vh;
+  display: grid;
+  gap: 1.5vw;
+  padding: 1vw;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+  "nav nav nav nav nav nav"
+  "hero hero hero hero aside2 aside2"
+  "hero hero hero hero aside2 aside2"
+  "hero hero hero hero aside2 aside2"
+  "hero hero hero hero aside2 aside2"
+  "aside3 aside3 aside4 aside4 aside2 aside2 ";
+
+  .item:nth-child(1) {
+    grid-area: nav;
+  }
+
+  .item:nth-child(2) {
+    grid-area: hero;
+    color: white;
+    // background-image: url(movie-index.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #7c7c7c;
+  }
+
+  .item:nth-child(3) {
+    grid-area: aside2;
+  }
+  .grid .item:nth-child(4) {
+    grid-area: aside3;
+  }
+
+  .grid .item:nth-child(5) {
+    grid-area: aside4;
+  }
+}
+
+.item {
+  border: 2px solid #464545;
+  border-radius: 16px;
+}
+
+.hero-header {
+  font-family: "Anton SC", sans-serif;
+  font-size: 6.4em;
+  color: white;
+}

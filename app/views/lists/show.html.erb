@@ -4,7 +4,7 @@
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col-4 p-3 card">
         <h5><%= bookmark.movie.title %></h5>
-        <%= button_to 'Delete', bookmark_path(bookmark), method: :delete %>
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete} %>
         <span><%= bookmark.movie.rating %></span>
       </div>
     <% end %>

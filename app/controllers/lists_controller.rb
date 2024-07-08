@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show]
   def index
     @lists = List.all
+    @movie = Movie.all.sample
   end
 
   def show

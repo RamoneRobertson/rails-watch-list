@@ -1,14 +1,26 @@
-<h1>Watchlist</h1>
-<p>Stay Entertained</p>
-<%= link_to "Create New List", new_list_path %>
-<div class="container col-3">
-  <% @lists.each do |list| %>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title"><%= list.name %></h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <%= link_to "View List", list_path(list) %>
+<div class="container">
+  <div class="grid">
+    <div class="item"></div>
+    <div class="item hero-content p-3">
+      <h1 class="hero-header">ScreenHive</h1>
+      <p>Your Movie Collections, Perfectly Organized</p>
+      <div>
+        <%= link_to "Create New List", new_list_path %>
+      </div>
     </div>
+    <div class="item">
+      Genre
+    </div>
+    <div class="item">
+      <% @lists.each do |list| %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= list.name %></h5>
+            <%= link_to "View List", list_path(list) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="item"></div>
   </div>
-  <% end %>
 </div>

@@ -33,8 +33,7 @@ puts "Created #{Movie.count} movies"
 
 puts "Creating bookmarks"
 movies = Movie.all
-bookmark_movies = movies.sample(10)
-bookmark_movies.each do |movie|
+movies.each do |movie|
   Bookmark.create!(
     comment: Faker::Movie.quote,
     list_id: popular_list.id,
