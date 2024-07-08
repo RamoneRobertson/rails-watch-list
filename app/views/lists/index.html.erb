@@ -1,11 +1,30 @@
 <div class="container">
   <div class="grid">
-    <div class="item"></div>
+    <div class="item">
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <div class="container-fluid">
+          <%= link_to "#", class: "navbar-brand" do %>
+            <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+          <% end %>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <%# if user_signed_in? %>
+              <li class="nav-item active">
+                <%= link_to "Home", "#", class: "btn btn-primary" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="item hero-content p-3">
       <h1 class="hero-header">ScreenHive</h1>
       <p>Your Movie Collections, Perfectly Organized</p>
       <div>
-        <%= link_to "Create New List", new_list_path %>
+        <%= link_to "Create New List", new_list_path, class: 'btn btn-primary' %>
       </div>
     </div>
     <div class="item">
