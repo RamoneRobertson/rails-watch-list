@@ -1,3 +1,6 @@
+body {
+  background-color: white;
+}
 .grid {
   background: hsl(36, 100%, 99%);
   width: 100%;
@@ -14,7 +17,7 @@
   "hero hero hero hero aside2 aside2"
   "hero hero hero hero aside2 aside2"
   "hero hero hero hero aside2 aside2"
-  "aside3 aside3 aside4 aside4 aside2 aside2 ";
+  "aside3 aside3 aside3 aside3 aside2 aside2 ";
 
   .item:nth-child(1) {
     grid-area: nav;
@@ -35,16 +38,14 @@
   }
   .grid .item:nth-child(4) {
     grid-area: aside3;
-  }
-
-  .grid .item:nth-child(5) {
-    grid-area: aside4;
+    grid-column: 1 / span 4;
   }
 }
 
 .item {
   border: 2px solid #464545;
   border-radius: 16px;
+  background-color: #7c7c7c;
 }
 
 .hero-header {
