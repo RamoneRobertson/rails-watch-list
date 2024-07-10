@@ -81,7 +81,7 @@ genres.each do |genre|
   movies_data = parse_movie_data("#{search_genre}#{genre["id"]}")
   results = movies_data["results"]
   results.each do |movie|
-    if Movie.where("title LIKE '#{movie["title"].gsub("'", "\\\'")}'").exists?
+    if Movie.where(title: movie["title"]).exists?
       puts "Record exist for #{movie["title"]}"
     else
       puts "Creating #{movie["title"]}"
@@ -91,6 +91,7 @@ genres.each do |genre|
           poster_url: poster_base_url + movie["poster_path"],
           rating: movie["vote_average"]
         )
+        puts "Creating new bookmark for #{list.name}"
       Bookmark.create!(
         comment: movie_reviews.sample,
         movie_id: new_movie.id,
