@@ -1,53 +1,22 @@
-<div class="container">
-  <div class="grid">
-    <div class="item">
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <div class="container-fluid">
-          <%= link_to "#", class: "navbar-brand" do %>
-            <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-          <% end %>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-              <%# if user_signed_in? %>
-              <li class="nav-item active">
-                <%= link_to "Home", "#", class: "btn btn-dark" %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="item hero-content p-3">
+<div class="grid">
+  <div class="item hero-content p-3">
+    <div>
       <h1 class="hero-header">ScreenHive</h1>
       <p>Your Movie Collections, Perfectly Organized</p>
-      <div>
-        <%= link_to "Create New List", new_list_path, class: 'btn btn-dark' %>
+    </div>
+    <div>
+      <%= link_to "Create New List", new_list_path, class: 'btn btn-dark hero-button' %>
+    </div>
+  </div>
+  <div class="item" id="">
+    <h3 class="header-whhite p-3">Trending This week</h3>
+  </div>
+  <div id="movie-carousel" class="item">
+    <% @lists.each do |list| %>
+      <div class="carousel-item card">
+        <p><%= list.name %></p>
+        <%= link_to "View", list_path(list) %>
       </div>
-    </div>
-    <div class="item">
-      <div id="movie-carousel" class="carousel slide">
-        <div class="carousel-inner">
-          <% @lists.each do |list| %>
-            <div class="carousel-item">
-              <h5 class="card-title"><%= list.name %></h5>
-              <%= link_to "View List", list_path(list) %>
-            </div>
-          <% end %>
-          <button class="carousel-control-prev" type="button" data-bs-target="#movie-carousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#movie-carousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="item d-flex">
-    </div>
+    <% end %>
   </div>
 </div>

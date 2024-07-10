@@ -1,8 +1,7 @@
 body {
-  background-color: white;
+  background-color: rgb(126, 126, 126);
 }
 .grid {
-  background: hsl(36, 100%, 99%);
   width: 100%;
   max-width: 1500px;
   height: 100vh;
@@ -12,45 +11,77 @@ body {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-  "nav nav nav nav nav nav"
   "hero hero hero hero aside2 aside2"
   "hero hero hero hero aside2 aside2"
   "hero hero hero hero aside2 aside2"
   "hero hero hero hero aside2 aside2"
-  "aside3 aside3 aside3 aside3 aside2 aside2 ";
+  "hero hero hero hero aside2 aside2"
+  "aside3 aside3 aside3 aside3 aside3 aside3";
 
   .item:nth-child(1) {
-    grid-area: nav;
-  }
-
-  .item:nth-child(2) {
     grid-area: hero;
     color: white;
-    // background-image: url(movie-index.jpg);
+    background-image: url(sciencef-list.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: 25% 18%;
     background-repeat: no-repeat;
     background-color: #7c7c7c;
   }
 
-  .item:nth-child(3) {
+  .item:nth-child(2) {
     grid-area: aside2;
+    background-color: gray;
+    background-image: url(https://image.tmdb.org/t/p/w500/iADOJ8Zymht2JPMoy3R7xceZprc.jpg);
+    background-position: center;
+    background-size: contain;
+    text-align: center;
   }
-  .grid .item:nth-child(4) {
+  .item:nth-child(3) {
     grid-area: aside3;
-    max-width: 350px;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 21%;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 1rem;
   }
 }
 
 .item {
-  border: 2px solid #464545;
-  background-color: #7c7c7c;
+  border-radius: 1rem;
+}
+
+.carousel-item {
+  // border: 2px solid #464545;
+  // background-color: #7c7c7c;
+  padding: 1em;
+  display: grid;
+  border-radius: 1rem;
+
+  img {
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
 }
 
 .hero-header {
   font-family: "Anton SC", sans-serif;
   font-size: 6.4em;
+  color: white;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .btn {
+    padding: 16px;
+  }
+}
+
+.header-white {
   color: white;
 }
