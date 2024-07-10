@@ -28,17 +28,26 @@
       </div>
     </div>
     <div class="item">
-      <h2>Top Movie</h2>
+      <div id="movie-carousel" class="carousel slide">
+        <div class="carousel-inner">
+          <% @lists.each do |list| %>
+            <div class="carousel-item">
+              <h5 class="card-title"><%= list.name %></h5>
+              <%= link_to "View List", list_path(list) %>
+            </div>
+          <% end %>
+          <button class="carousel-control-prev" type="button" data-bs-target="#movie-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#movie-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="item d-flex">
-      <% @lists.each do |list| %>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= list.name %></h5>
-            <%= link_to "View List", list_path(list) %>
-          </div>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>

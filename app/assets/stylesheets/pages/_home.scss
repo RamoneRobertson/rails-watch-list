@@ -38,13 +38,14 @@ body {
   }
   .grid .item:nth-child(4) {
     grid-area: aside3;
-    grid-column: 1 / span 4;
+    max-width: 350px;
+    grid-column-start: 1;
+    grid-column-end: 4;
   }
 }
 
 .item {
   border: 2px solid #464545;
-  border-radius: 16px;
   background-color: #7c7c7c;
 }
 
