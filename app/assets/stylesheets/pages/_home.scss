@@ -63,7 +63,9 @@ body {
   img {
     inline-size: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    object-fit: fill;
+    object-position: center;
+    padding: 16px;
   }
 }
 
