@@ -1,4 +1,5 @@
 .bookmark-grid {
+  width: 100%;
   display: inline-grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;

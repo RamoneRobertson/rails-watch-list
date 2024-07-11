@@ -80,6 +80,7 @@ genres.each do |genre|
   list = List.create(name: genre["name"])
   movies_data = parse_movie_data("#{search_genre}#{genre["id"]}")
   results = movies_data["results"]
+  # selected_movies = results.take(3)
   results.each do |movie|
     if Movie.where(title: movie["title"]).exists?
       puts "Record exist for #{movie["title"]}"
