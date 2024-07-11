@@ -13,7 +13,7 @@
   </div>
   <div id="movie-carousel" class="item">
     <% @lists.each do |list| %>
-      <div class="carousel-item card" style="background-image: url(<%= list.bookmarks.first.movie.poster_url %>)">
+      <div class="carousel-item card">
         <p><%= list.name %></p>
         <%= link_to "View", list_path(list) %>
       </div>
