@@ -1,12 +1,10 @@
 <div class="form-container">
   <h1>Add new bookmark for <%= @list.name %></h1>
-  <div class="row">
-    <div class="col-6">
-      <%= simple_form_for([@list, @bookmark]) do |f| %>
-        <%= f.input :comment %>
-        <%= f.association :movie %>
-        <%= f.submit class: "btn btn-primary" %>
-      <% end %>
-    </div>
+  <div class="col-6">
+    <%= simple_form_for([@list, @bookmark]) do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>

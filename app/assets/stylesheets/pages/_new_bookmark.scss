@@ -1,0 +1,17 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3.2rem;
+}
+
+.simple_form {
+  input {
+    border-radius: 5em;
+  }
+
+  .form-select {
+    border-radius: 5em;
+  }
+}
