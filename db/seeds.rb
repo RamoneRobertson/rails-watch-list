@@ -3,7 +3,7 @@ key = ENV["TMDB_API_KEY"]
 base_url = "https://api.themoviedb.org/3/"
 popular_url = "movie/popular?api_key=#{key}"
 genres_url = "https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}"
-search_genre = "https://api.themoviedb.org/3/discover/movie?api_key=#{key}&with_genres="
+search_genre = "https://api.themoviedb.org/3/discover/movie?api_key=#{key}&language=en-US&include_adult=false&with_genres="
 poster_base_url = "https://image.tmdb.org/t/p/w500"
 
 # full url
