@@ -65,7 +65,14 @@
     border-radius: 50px;
     text-align: center;
     padding: 5px 15px;
+    color: #1c1c1c;
   }
+}
+
+a:hover {
+  color: white;
+  background: #595959;
+  transition: all .4s ease;
 }
 
 .boxLhover {

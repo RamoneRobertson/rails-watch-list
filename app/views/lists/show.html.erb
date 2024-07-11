@@ -16,6 +16,7 @@
             <div class="overlay">
               <p><%= bookmark.movie.overview %></p>
               <span>rating: <%= bookmark.movie.rating %></span>
+              <%= link_to "Delete", bookmark_path(bookmark), data: { "turbo-method": :delete, turbo_confirm: "Delete #{bookmark.movie.title} from this list?" } %>
             </div>
           </div>
         </div>
