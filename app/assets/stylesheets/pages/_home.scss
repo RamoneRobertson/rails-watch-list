@@ -33,7 +33,8 @@ body {
     background-color: gray;
     background-image: url(https://image.tmdb.org/t/p/w500/iADOJ8Zymht2JPMoy3R7xceZprc.jpg);
     background-position: center;
-    background-size: contain;
+    background-size: fill;
+    background-repeat: no-repeat;
     text-align: center;
     color: white;
   }
