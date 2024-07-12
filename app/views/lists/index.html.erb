@@ -13,7 +13,7 @@
   </div>
   <div id="movie-carousel" class="item">
     <% @lists.each do |list| %>
-      <div class="carousel-item card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('default-list.jpg') %>)">
+      <div class="carousel-item card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path(list.bookmarks.first.movie.poster_url) %>)">
         <p><%= list.name %></p>
         <%= link_to "View", list_path(list) %>
       </div>
