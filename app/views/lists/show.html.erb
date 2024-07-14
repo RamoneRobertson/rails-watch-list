@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key): image_path("default-list.jpg")%>)">
+<div class="banner" style="background-image: url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key): "none"%>)">
   <div class="banner-text">
     <h1><%= @list.name %></h1>
   </div>
