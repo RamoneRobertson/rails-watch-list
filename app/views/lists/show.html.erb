@@ -7,7 +7,7 @@
   <%= link_to "Add Bookmark", new_list_bookmark_path(@list), class: "btn btn-dark m-3"%>
 </div>
 <div class="bookmark-grid">
-  <% @list.bookmarks.each do |bookmark| %>
+  <% @bookmarks.each do |bookmark| %>
     <div class="bookmark-card">
       <div class="wrapper">
         <div class="box-area">
