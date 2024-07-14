@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key): "none"%>)">
+<div class="banner" style="background-image: url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key): "background: none"%>)">
   <div class="banner-text">
     <h1><%= @list.name %></h1>
   </div>
@@ -8,19 +8,21 @@
 </div>
 <div class="bookmark-grid">
   <% @bookmarks.each do |bookmark| %>
-    <div class="bookmark-card">
-      <div class="wrapper">
-        <div class="box-area">
-          <div class="box">
-            <%= image_tag bookmark.movie.poster_url, alt: "text" %>
-            <div class="overlay">
-              <p><%= bookmark.movie.overview %></p>
-              <span>rating: <%= bookmark.movie.rating %></span>
-              <%= link_to "Delete", bookmark_path(bookmark), data: { "turbo-method": :delete, turbo_confirm: "Delete #{bookmark.movie.title} from this list?" } %>
+    <% cache bookmark do %>
+      <div class="bookmark-card">
+        <div class="wrapper">
+          <div class="box-area">
+            <div class="box">
+              <%= image_tag bookmark.movie.poster_url, alt: "text" %>
+              <div class="overlay">
+                <p><%= bookmark.movie.overview %></p>
+                <span>rating: <%= bookmark.movie.rating %></span>
+                <%= link_to "Delete", bookmark_path(bookmark), data: { "turbo-method": :delete, turbo_confirm: "Delete #{bookmark.movie.title} from this list?" } %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

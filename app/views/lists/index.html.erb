@@ -13,10 +13,12 @@
   </div>
   <div id="movie-carousel" class="item">
     <% @lists.each do |list| %>
-      <div class="carousel-item card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "none"%>)">
-        <p><%= list.name %></p>
-        <%= link_to "View", list_path(list) %>
-      </div>
+      <% cache list do %>
+        <div class="carousel-item card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "background: none"%>)">
+          <p><%= list.name %></p>
+          <%= link_to "View", list_path(list) %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
