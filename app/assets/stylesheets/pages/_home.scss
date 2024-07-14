@@ -18,6 +18,33 @@ body {
   "hero hero hero hero aside2 aside2"
   "aside3 aside3 aside3 aside3 aside3 aside3";
 
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "hero hero aside2 aside2"
+      "hero hero aside2 aside2"
+      "aside3 aside3 aside3 aside3"
+      "aside3 aside3 aside3 aside3";
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "hero hero"
+      "hero hero"
+      "aside2 aside2"
+      "aside3 aside3";
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "hero"
+      "aside2"
+      "aside3";
+  }
+
   .item:nth-child(1) {
     grid-area: hero;
     color: white;
@@ -37,6 +64,11 @@ body {
     background-repeat: no-repeat;
     text-align: center;
     color: white;
+     padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
   }
   .item:nth-child(3) {
     grid-area: aside3;
@@ -60,6 +92,12 @@ body {
   display: grid;
   border-radius: 1rem;
 
+  @media (max-width: 768px) {
+    padding: 1.2em;
+  }
+
+
+
   img {
     inline-size: 100%;
     aspect-ratio: 16 / 9;
@@ -73,6 +111,10 @@ body {
   font-family: "Anton SC", sans-serif;
   font-size: 6.4em;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 3.2em;
+  }
 }
 
 .hero-content {
